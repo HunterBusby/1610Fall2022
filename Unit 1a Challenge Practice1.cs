@@ -14,7 +14,7 @@ public class Program
 
 		ultrabomb.firePower += weaponPowerUp.powerLevel;
 		Console.WriteLine("Don't forget to use your " + ultrabomb.weaponName + "." );
-		Console.WriteLine("This enemies has a level " + enemypower.powerLevel + " defense.");
+		Console.WriteLine(enemypower.enemyname  + " has a level " + enemypower.powerLevel + " defense.");
 		Console.WriteLine("The " + ultrabomb.weaponName + " will do "+ ultrabomb.firePower / enemypower.powerLevel + "HP damage to those enemies.");
 		
 	}
@@ -31,4 +31,5 @@ public class PowerUp {
 }
 public class Enemypower {
 	public int powerLevel =2;
+	public string enemyname = "Stoic defender";
 }
