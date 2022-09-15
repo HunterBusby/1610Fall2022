@@ -2,17 +2,17 @@ using System;
 					
 public class Program
 {
-	public Weapon ultrabomb;
-	public PowerUp weaponPowerUp;
+	public Damage ultrabomb;
+	public PowerUp damagePowerUp;
 	public Enemypower enemypower;
 	
 	public void Main()
 	{
-		ultrabomb = new Weapon();
-		weaponPowerUp = new PowerUp();
+		ultrabomb = new Damage();
+		damagePowerUp = new PowerUp();
 		enemypower = new Enemypower();
 
-		ultrabomb.firePower += weaponPowerUp.powerLevel;
+		ultrabomb.firePower += damagePowerUp.powerLevel;
 		Console.WriteLine("Don't forget to use your " + ultrabomb.weaponName + "." );
 		Console.WriteLine(enemypower.enemyname  + " has a level " + enemypower.powerLevel + " defense.");
 		Console.WriteLine("The " + ultrabomb.weaponName + " will do "+ ultrabomb.firePower / enemypower.powerLevel + "HP damage to those enemies.");
@@ -20,7 +20,7 @@ public class Program
 	}
 }
 
-public class Weapon {
+public class Damage {
 	public int ammoCount = 10;
 	public string weaponName = "Ultrabomb";
 	public float firePower = 15.5f;
