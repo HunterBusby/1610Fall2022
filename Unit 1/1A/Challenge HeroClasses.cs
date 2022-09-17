@@ -14,7 +14,7 @@ public class Program
 		
 		heroOne.health = 2;
 		heroOne.powerLevel = 5;
-		heroTwo.specialPower = 9.5f;
+		heroOne.specialPower = 9.5f;
 		
 		heroTwo.health = 3;
 		heroTwo.powerLevel = 1;
