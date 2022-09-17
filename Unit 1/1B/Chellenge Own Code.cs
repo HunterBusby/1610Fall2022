@@ -2,18 +2,17 @@ using System;
 					
 public class Program
 {
+	public int playerlvl = 3;
 	public Skeksis SkekSa; 
 	public Skeksis SkekLo;
 	public Gametime stateTime;
+	public Condition rundialogue;
 	
 	public void Main()
 	{
+		rundialogue = new Condition ();
 		SkekSa = new Skeksis();
 		SkekLo = new Skeksis();
-		
-		stateTime = new Gametime () ;
-		stateTime.currenttime = Gametime.Time.Evening;
-		stateTime.CheckTime();
 		
 		string enemy1 = "SkekSka";
 		SkekSa.health = 50;
@@ -25,15 +24,21 @@ public class Program
 		SkekLo.powerLevel = 4;
 		SkekLo.specialPower = 10.5f;
 		
+		stateTime = new Gametime () ;
+		stateTime.currenttime = Gametime.Time.Evening;
+		stateTime.CheckTime();
+		
 		Console.WriteLine("You have encountered a " + SkekSa.UserName);
 		Console.WriteLine("");
 		Console.WriteLine(enemy1 + " has (" + SkekSa.health + ") health.");
 		Console.WriteLine(enemy1 + " is level (" + SkekSa.powerLevel + ")");
 		Console.WriteLine(enemy1 + "'s Special power does (" + SkekSa.specialPower + ") damage.");
 		Console.WriteLine("");
-		Console.WriteLine(enemy2 + " has (" + SkekSa.health + ") health.");
-		Console.WriteLine(enemy2 + " is level (" + SkekSa.powerLevel + ")");
-		Console.WriteLine(enemy2 + "'s Special power does (" + SkekSa.specialPower + ") damage.");
+		Console.WriteLine(enemy2 + " has (" + SkekLo.health + ") health.");
+		Console.WriteLine(enemy2 + " is level (" + SkekLo.powerLevel + ")");
+		Console.WriteLine(enemy2 + "'s Special power does (" + SkekLo.specialPower + ") damage.");
+		Console.WriteLine("");
+		rundialogue.lvlcheck(playerlvl,SkekSa.powerLevel);
 	}
 }
 public class Skeksis
@@ -67,8 +72,12 @@ public class Gametime {
 			default:
 				Console.WriteLine("Hello");
 				break;
-		
 		}
-	
 	}
-}
+}	
+public class Condition{	
+	public void lvlcheck (int value, int value2) {
+		string result = (value > value2 ) ? "Ha, this enemy is no match" : "you should run. They look much thougher than you.";
+		Console.WriteLine(result);
+		}
+	}
