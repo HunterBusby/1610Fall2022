@@ -42,10 +42,9 @@ public class Program
 	}
 	
 	public void CheckXY () {
-	if ( x == y ) {
-			Console.WriteLine("X is the same as Y");
-		} else {
-			Console.WriteLine("X is not the same as Y");
-		}
+	string result = (x == y ) ? "X is the same as Y" : "X is not the same as Y";
+		Console.WriteLine(result);
+	string result2 = (x > y) ? "X is greater than Y" : "X is not greater than Y";
+		Console.WriteLine(result2);
 	}
 }
