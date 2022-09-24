@@ -29,8 +29,8 @@ public class Program
         Console.WriteLine(s);
       } 
 	   Console.WriteLine("");
-	   string[] killers = {"leon", "mondo", "Celestia", "sakura", "Junko"};
-      foreach (string w in killers) 
+	   string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+      foreach (string w in cars) 
       {
         Console.WriteLine(w);
       }   
