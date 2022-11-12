@@ -17,7 +17,18 @@ public class PlayerController : MonoBehaviour
     public Transform blaster;
     
     public GameObject laserBolt;
- 
+
+    public GameManager gameManager;
+
+    public AudioClip laserSound;
+
+    private AudioSource playerAudio;
+    private void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        playerAudio = GetComponent<AudioSource>();
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -41,10 +52,11 @@ public class PlayerController : MonoBehaviour
         }
         // if space bar is pressed fire laser bolt
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && gameManager.isGameOver == false)
         {
             //create laser bolt at blaster transform position maintaining the objects rotation
             Instantiate(laserBolt, blaster.transform.position, laserBolt.transform.rotation);
+            playerAudio.PlayOneShot(laserSound);
         }
     }
     //delete any object with a trigger that hits the player
