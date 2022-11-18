@@ -20,6 +20,7 @@ public class MatchBehaviour : MonoBehaviour
         else
         {
             noMatchEvent.Invoke();
+            Debug.Log("Game Over!");
             yield return new WaitForSeconds(0.5f);
             NoMatchDelayedEvent.Invoke();
         }
