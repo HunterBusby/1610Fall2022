@@ -2384,6 +2384,7 @@ GameObject:
   - component: {fileID: 1689760472}
   - component: {fileID: 1689760471}
   - component: {fileID: 1689760474}
+  - component: {fileID: 1689760475}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -2513,21 +2514,41 @@ MonoBehaviour:
   noMatchEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1689760469}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1689760475}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Movement
           m_BoolArgument: 0
         m_CallState: 2
   NoMatchDelayedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &1689760475
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689760469}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b1e57a1250e8d84f895e45744d1d0c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1924922627
 GameObject:
   m_ObjectHideFlags: 0
